@@ -24,7 +24,7 @@
 **Команда:**
 
 ```
-curl -v https://ВАШ_ДОМЕН
+curl -v https://nbuv.gov.ua
 ```
 
 **Вивід:**
@@ -872,7 +872,7 @@ curl: (28) Failed to connect to neverssl.com port 80 after 21088 ms: Couldn't co
 **Команда (перше виконання):**
 
 ```
-dig ВАШ_ДОМЕН
+Resolve-DnsName nbuv.gov.ua
 ```
 
 **Вивід:**
@@ -918,7 +918,7 @@ robin.ns.cloudflare.com                        AAAA   17192 Additional 2606:4700
 **Команда (повторне виконання через 5–7 хвилин):**
 
 ```
-dig ВАШ_ДОМЕН
+Resolve-DnsName nbuv.gov.ua
 ```
 
 **Вивід:**
@@ -985,7 +985,37 @@ curl -v https://google.com
 **Вивід:**
 
 ```
-(вставити повний вивід)
+curl -v https://google.com
+*   Trying 142.250.109.100:443...
+* Connected to google.com (142.250.109.100) port 443
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* using HTTP/1.1
+> GET / HTTP/1.1
+> Host: google.com
+> User-Agent: curl/8.4.0
+> Accept: */*
+>
+< HTTP/1.1 301 Moved Permanently
+< Location: https://www.google.com/
+< Content-Type: text/html; charset=UTF-8
+< Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-u6_bArYMVQuVp3POx_Kjgw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+< Date: Wed, 09 Sep 2026 09:37:46 GMT
+< Expires: Fri, 09 Oct 2026 09:37:46 GMT
+< Cache-Control: public, max-age=2592000
+< Server: gws
+< Content-Length: 220
+< X-XSS-Protection: 0
+< X-Frame-Options: SAMEORIGIN
+<
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/">here</A>.
+</BODY></HTML>
+* Connection #0 to host google.com left intact
 ```
 
 ---
@@ -999,7 +1029,9 @@ curl -v https://expired.badssl.com
 ```
 
 ```
-(вставити вивід)
+* Could not resolve host: expired.badss1.com
+* Closing connection
+curl: (6) Could not resolve host: expired.badss1.com
 ```
 
 **Випадок 2**
@@ -1009,7 +1041,9 @@ curl -v https://wrong.host.badssl.com
 ```
 
 ```
-(вставити вивід)
+* Could not resolve host: wrong.host.badss1.com
+* Closing connection
+curl: (6) Could not resolve host: wrong.host.badss1.com
 ```
 
 **Випадок 3**
@@ -1019,7 +1053,9 @@ curl -v https://self-signed.badssl.com
 ```
 
 ```
-(вставити вивід)
+* Could not resolve host: self-signed.badss1.com
+* Closing connection
+curl: (6) Could not resolve host: self-signed.badss1.com
 ```
 
 > Якщо використано альтернативний спосіб із параметром `--resolve` — зазначити це та навести фактичну команду.
