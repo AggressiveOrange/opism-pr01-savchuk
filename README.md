@@ -878,7 +878,41 @@ dig ВАШ_ДОМЕН
 **Вивід:**
 
 ```
-(вставити повний вивід)
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+nbuv.gov.ua                                    A      108   Answer     194.44.11.136
+
+Name      : nbuv.gov.ua
+QueryType : NS
+TTL       : 28069
+Section   : Authority
+NameHost  : robin.ns.cloudflare.com
+
+
+Name      : nbuv.gov.ua
+QueryType : NS
+TTL       : 28069
+Section   : Authority
+NameHost  : skip.ns.cloudflare.com
+
+skip.ns.cloudflare.com                         A      85524 Additional 173.245.59.233
+skip.ns.cloudflare.com                         A      85524 Additional 108.162.193.233
+skip.ns.cloudflare.com                         A      85524 Additional 172.64.33.233
+robin.ns.cloudflare.com                        A      17192 Additional 108.162.192.218
+                                                      7
+robin.ns.cloudflare.com                        A      17192 Additional 172.64.32.218
+                                                      7
+robin.ns.cloudflare.com                        A      17192 Additional 173.245.58.218
+                                                      7
+skip.ns.cloudflare.com                         AAAA   85524 Additional 2803:f800:50::6ca2:c1e9
+skip.ns.cloudflare.com                         AAAA   85524 Additional 2a06:98c1:50::ac40:21e9
+skip.ns.cloudflare.com                         AAAA   85524 Additional 2606:4700:58::adf5:3be9
+robin.ns.cloudflare.com                        AAAA   17192 Additional 2803:f800:50::6ca2:c0da
+                                                      7
+robin.ns.cloudflare.com                        AAAA   17192 Additional 2a06:98c1:50::ac40:20da
+                                                      7
+robin.ns.cloudflare.com                        AAAA   17192 Additional 2606:4700:50::adf5:3ada
+                                                      7
 ```
 
 **Команда (повторне виконання через 5–7 хвилин):**
@@ -890,7 +924,41 @@ dig ВАШ_ДОМЕН
 **Вивід:**
 
 ```
-(вставити повний вивід)
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+nbuv.gov.ua                                    A      300   Answer     194.44.11.136
+
+Name      : nbuv.gov.ua
+QueryType : NS
+TTL       : 27808
+Section   : Authority
+NameHost  : robin.ns.cloudflare.com
+
+
+Name      : nbuv.gov.ua
+QueryType : NS
+TTL       : 27808
+Section   : Authority
+NameHost  : skip.ns.cloudflare.com
+
+skip.ns.cloudflare.com                         A      85263 Additional 172.64.33.233
+skip.ns.cloudflare.com                         A      85263 Additional 173.245.59.233
+skip.ns.cloudflare.com                         A      85263 Additional 108.162.193.233
+robin.ns.cloudflare.com                        A      17166 Additional 172.64.32.218
+                                                      6
+robin.ns.cloudflare.com                        A      17166 Additional 173.245.58.218
+                                                      6
+robin.ns.cloudflare.com                        A      17166 Additional 108.162.192.218
+                                                      6
+skip.ns.cloudflare.com                         AAAA   85263 Additional 2606:4700:58::adf5:3be9
+skip.ns.cloudflare.com                         AAAA   85263 Additional 2803:f800:50::6ca2:c1e9
+skip.ns.cloudflare.com                         AAAA   85263 Additional 2a06:98c1:50::ac40:21e9
+robin.ns.cloudflare.com                        AAAA   17166 Additional 2a06:98c1:50::ac40:20da
+                                                      6
+robin.ns.cloudflare.com                        AAAA   17166 Additional 2606:4700:50::adf5:3ada
+                                                      6
+robin.ns.cloudflare.com                        AAAA   17166 Additional 2803:f800:50::6ca2:c0da
+                                                      6
 ```
 
 **Зафіксовані значення:**
@@ -898,9 +966,9 @@ dig ВАШ_ДОМЕН
 
 | Параметр                        | Перше виконання | Повторне виконання |
 | --------------------------------------- | ----------------------------- | ----------------------------------- |
-| Час виконання (год:хв) |                               |                                     |
-| IP-адреса                         |                               |                                     |
-| Значення TTL                    |                               |                                     |
+| Час виконання (год:хв) | 12:15                              | 12:20                                    |
+| IP-адреса                         | 194.44.11.136                              | 194.44.11.136                                    |
+| Значення TTL                    | 108                              | 300                                    |
 
 > Якщо друге значення TTL виявилося більшим за перше — це нормально: кеш резолвера встиг оновитися. Зафіксуйте як є.
 
