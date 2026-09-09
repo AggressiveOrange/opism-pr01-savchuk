@@ -856,7 +856,11 @@ curl -v http://neverssl.com
 **Вивід:**
 
 ```
-(вставити повний вивід)
+*   Trying 34.223.124.45:80...
+* connect to 34.223.124.45 port 80 failed: Timed out
+* Failed to connect to neverssl.com port 80 after 21088 ms: Couldn't connect to server
+* Closing connection
+curl: (28) Failed to connect to neverssl.com port 80 after 21088 ms: Couldn't connect to server
 ```
 
 ---
