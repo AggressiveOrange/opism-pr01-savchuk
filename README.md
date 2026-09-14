@@ -302,9 +302,9 @@ curl: (60) schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - The certificate chain w
 
 | № | Назва групи (власне формулювання) | Рядки виводу, віднесені до групи | Обґрунтування |
 |---|-----------------------------------|----------------------------------|---------------|
-| 1 | Рівень програмного забезпечення |  |  |
-| 2 | Рівень захисту |  |  |
-| 3 | Рівень мережевого підключення |  |  |
+| 1 | Рівень програмного забезпечення | > GET / HTTP/1.1<br>> Host: nbuv.gov.ua<br>> User-Agent: curl/8.4.0<br>> Accept: */* <br>< Content-Type: text/html; charset=utf-8| Взаємодію програмного забезпечення клієнта із сервером |
+| 2 | Рівень захисту | * schannel: disabled automatic use of client certificate<br>schannel: next InitializeSecurityContext failed: SEC_E_CERT_EXPIRED (0x80090328) - The received certificate has expired.<br>* schannel: SNI or certificate check failed: SEC_E_WRONG_PRINCIPAL (0x80090322) - The target principal name is incorrect.<br><* schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - The certificate chain was issued by an authority that is not trusted.><br>curl: (60) schannel: SNI or certificate check failed: SEC_E_WRONG_PRINCIPAL (0x80090322) - The target principal name is incorrect. | Захищення з'єднання HTTPS/TLS та перевірка цифрових сертифікатів. |
+| 3 | Рівень мережевого підключення | * Trying 194.44.11.136:443...<br>Connected to nbuv.gov.ua (194.44.11.136) port 443<br>* Trying 34.223.124.45:80...<br>* Connected to neverssl.com (34.223.124.45) port 80<br>* Connected to google.com (142.250.130.102) port 443 | Встановлення мережевого з'єднання між клієнтом і сервером |
 
 *Групи впорядковано від найближчої до користувача (№ 1) до найближчої до апаратного забезпечення. Зайві рядки вилучити, за потреби — додати.*
 
